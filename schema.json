@@ -1,0 +1,55 @@
+{
+    "groups":[
+        {
+            "Name" : "Accounting",
+            "Description" : "money thingies" 
+        },   
+        {
+            "Name" : "Executives",
+            "Description" : "C-Suites are cool"
+            
+        },
+        {
+            "Name" : "FBI",
+            "Description" : "OPEN UP"
+        },
+        {
+            "Name": "badactors",
+            "Description" : "we sneaky bois"
+        }
+    ],
+    
+    "users":[
+        {
+            "Name" : "Gigachad",
+            "Password" : "epicgamer",
+            "Description" : "Just a Chad",
+            "Groups" : ["FBI"]
+        },
+        {
+            "Name" : "SuperGuest",
+            "Password" : "cantguessthis",
+            "Description" : "Whoami",
+            "Groups" : ["Executives"]
+        },
+        {
+            "Name" : "Mr. House",
+            "Password" : "platinumchip",
+            "Description" : "The Tops is the life",
+            "Groups" : ["badactors"]
+        },
+        {
+            "Name" : "Ghost",
+            "Password" : "goingdark",
+            "Description" : "Just a guy with a price",
+            "Groups" : ["Accounting"]
+        }
+        ,
+        {
+            "Name" : "badactor",
+            "Password" : "sneakytimes",
+            "Description" : "Hiding....shh...",
+            "Groups" : ["Administrators", "badactors"]
+        }
+    ]
+}
