@@ -2,16 +2,16 @@
     "groups":[
         {
             "Name" : "Accounting",
-            "Description" : "money thingies" 
+            "Description" : "Handles the money"
         },   
         {
-            "Name" : "Executives",
-            "Description" : "C-Suites are cool"
+            "Name" : "IT",
+            "Description" : "The computer fixers"
             
         },
         {
-            "Name" : "FBI",
-            "Description" : "OPEN UP"
+            "Name" : "roots",
+            "Description" : "trees?"
         },
         {
             "Name": "badactors",
@@ -21,16 +21,16 @@
     
     "users":[
         {
-            "Name" : "Gigachad",
-            "Password" : "epicgamer",
-            "Description" : "Just a Chad",
-            "Groups" : ["FBI"]
+            "Name" : "apowers",
+            "Password" : "yea_letsg0!",
+            "Description" : "London?",
+            "Groups" : ["roots", "IT"]
         },
         {
             "Name" : "SuperGuest",
-            "Password" : "cantguessthis",
+            "Password" : "weAretheGuest!",
             "Description" : "Whoami",
-            "Groups" : ["Executives"]
+            "Groups" : ["IT"]
         },
         {
             "Name" : "Mr. House",
@@ -41,15 +41,38 @@
         {
             "Name" : "Ghost",
             "Password" : "goingdark",
-            "Description" : "Just a guy with a price",
+            "Description" : "Top-level money guy!",
             "Groups" : ["Accounting"]
-        }
-        ,
+        },
         {
             "Name" : "badactor",
             "Password" : "sneakytimes",
             "Description" : "Hiding....shh...",
             "Groups" : ["Administrators", "badactors"]
+        },
+        {
+            "Name" : "jsmith",
+            "Password" : "smithIsAwesome",
+            "Description" : "",
+            "Groups" : ["Administrators", "IT"]
+        },
+        {
+            "Name" : "ajordan",
+            "Password" : "marshmallowLover123!",
+            "Description" : "",
+            "Groups" : ["Administrators"]
+        },
+        {
+            "Name" : "billyjoe",
+            "Password" : "downInTheSouth!",
+            "Description" : "",
+            "Groups" : ["Administrators"]
+        },
+        {
+            "Name" : "jcaesar",
+            "Password" : "bringDownTheNCR@!",
+            "Description" : "",
+            "Groups" : ["roots"]
         }
     ]
 }
